@@ -52,8 +52,9 @@ const Main = () => {
       })
       
   }, [url]);
-  console.log(err);
+ 
   if (err) return (<><Error /> </>);
+  
   return (
     <>
       {load && <Loading />}

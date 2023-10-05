@@ -43,15 +43,9 @@ function NewsCard(props) {
             {titl + "."}
         </Typography>
         <Typography>
-        <div className="flex justify-between my-2">
-          <span className="font-bold">{src}</span>
-          <span>{pub_at}</span>
-        </div>
-        <div
-          id="c-text"
-          className="card-text"
-          dangerouslySetInnerHTML={{ __html: desc + "..." }}
-        ></div>
+          {src}
+          {pub_at}
+          {desc}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
