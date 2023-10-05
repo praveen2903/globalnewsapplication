@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ParamContext } from "../context/Context";
 import NewsCard from "./NewsCard";
 import Loading from "./Loading";
-// import Error from "./Error";
+import Error from "./Error";
 
 // const key = `${process.env.REACT_APP_NEWS_API_KEY}`;
 
@@ -52,7 +52,7 @@ const Main = () => {
       
   }, [url]);
  
-  // if (err) return (<><Error /> </>);
+  if (err) return (<><Error /> </>);
 
   return (
     <>
