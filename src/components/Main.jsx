@@ -4,7 +4,7 @@ import NewsCard from "./NewsCard";
 import Loading from "./Loading";
 import Error from "./Error";
 
-const key = `${process.env.REACT_APP_NEWS_API_KEY}`;
+// const key = `${process.env.REACT_APP_NEWS_API_KEY}`;
 
 const Main = () => {
     
@@ -20,17 +20,17 @@ const Main = () => {
   const [load, setLoad] = useState(true);
 
   if (keyw) {
-    url = `https://gnews.io/api/v4/search?token=${key}&q=${keyw}`;
+    url = `https://gnews.io/api/v4/search?token=c8315529a8b1679797271222a7b6fe03&q=${keyw}`;
   } else if (loc === "in") {
     if (cat)
-      url = `https://gnews.io/api/v4/top-headlines?token=${key}&lang=${lang}&topic=${cat}&country=${loc}`;
+      url = `https://gnews.io/api/v4/top-headlines?token=c8315529a8b1679797271222a7b6fe03&lang=${lang}&topic=${cat}&country=${loc}`;
     else
-      url = `https://gnews.io/api/v4/top-headlines?token=${key}&lang=${lang}&country=${loc}`;
+      url = `https://gnews.io/api/v4/top-headlines?token=c8315529a8b1679797271222a7b6fe03&lang=${lang}&country=${loc}`;
   } else {
     if (cat)
-      url = `https://gnews.io/api/v4/top-headlines?token=${key}&lang=${lang}&topic=${cat}`;
+      url = `https://gnews.io/api/v4/top-headlines?token=c8315529a8b1679797271222a7b6fe03&lang=${lang}&topic=${cat}`;
     else
-      url = `https://gnews.io/api/v4/top-headlines?token=${key}&lang=${lang}`;
+      url = `https://gnews.io/api/v4/top-headlines?token=c8315529a8b1679797271222a7b6fe03&lang=${lang}`;
   }
   useEffect(() => {
     setLoad(true);
@@ -44,7 +44,6 @@ const Main = () => {
         }
       })
       .then((results) => {
-        console.log(results);
         setResult(results.articles);
         setLoad(false);
       }).catch(error=>{
@@ -54,7 +53,7 @@ const Main = () => {
   }, [url]);
  
   if (err) return (<><Error /> </>);
-  
+
   return (
     <>
       {load && <Loading />}
