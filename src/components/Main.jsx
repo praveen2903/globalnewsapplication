@@ -7,7 +7,6 @@ import Error from "./Error";
 // const key = `${process.env.REACT_APP_NEWS_API_KEY}`;
 
 const Main = () => {
-    
   const params = useContext(ParamContext);
   const [result, setResult] = useState([]);
   const [err, setErr] = useState(false);
@@ -56,19 +55,25 @@ const Main = () => {
 
   return (
     <>
-      {load && <Loading />}
-      <div className="flex-col justify-center items-center w-full mx-auto sm:flex sm:flex-row  sm:flex-wrap ">
-        {result.map((news_item, idx) => {
-          return (
-            <div
-              key={idx + "$"}
-              className="my-4 mx-2  shadow-md shadow-gray-500 sm:w-1/2 md:w-1/3 lg:w-1/4"
-            >
-              <NewsCard props={news_item} key={"&" + idx} />
-            </div>
-          );
-        })}
-      </div>
+      {load?(
+      <div className="flex items-center justify-center mt-5">
+        {<Loading />}
+    </div>
+      ):(
+    <div className="flex-col justify-center items-center w-full mx-auto sm:flex sm:flex-row sm:flex-wrap">
+      {result.map((news_item, idx) => {
+        return (
+          <div
+            key={idx + "$"}
+            className="mx-4 my-4 shadow-md shadow-gray-500 sm:w-1/2 md:w-1/3 lg:w-1/4 flex items-center justify-center"
+          >
+            <NewsCard props={news_item} key={"&" + idx} />
+          </div>
+        );
+      })}
+    </div>
+      )  
+  }
    
     </>
   );
