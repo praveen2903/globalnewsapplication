@@ -110,7 +110,7 @@ export default function Example() {
                   setSearch(event.target.value);
                 }}
                 placeholder="Keywords here"
-                className="text-base font-medium text-gray-900  hover:text-gray-700 py-1 px-2 border-2  "
+                className="text-base font-medium text-gray-900 bg-white  hover:text-gray-700 py-1 px-2 border-2  "
               />
               <button
                 onClick={() => handleClick({ keyword: searchVal })}
