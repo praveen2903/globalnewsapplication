@@ -3,6 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import logo from "../logo.png";
 import { ParamContext } from "../context/Context";
 import Main from "./Main";
+import { FaSearch } from "react-icons/fa";
 import {
   Bars3Icon,
   ChartBarIcon,
@@ -116,7 +117,7 @@ export default function Example() {
                 onClick={() => handleClick({ keyword: searchVal })}
                 className="active:bg-purple-800 text-base font-medium text-gray-900 rounded-md hover:text-white hover:bg-purple-600 mx-2 py-2 px-2 border-2"
               >
-                Search
+                <FaSearch/>
               </button>
              
             </div>
