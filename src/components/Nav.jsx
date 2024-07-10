@@ -391,7 +391,6 @@ export default function Example() {
           window.scrollTo(0, 0);
         }}
       >
-        ^
       </div>
      
     </div>

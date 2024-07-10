@@ -1,18 +1,7 @@
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Button,
-  } from "@material-tailwind/react";
 
 function reverseString(str) {
   var s = str.split("");
-
-  var date =
-    s[8] + s[9] + s[7] + s[5] + s[6] + s[4] + s[0] + s[1] + s[2] + s[3];
-
+  var date = s[8] + s[9] + s[7] + s[5] + s[6] + s[4] + s[0] + s[1] + s[2] + s[3];
   return date;
 }
 
@@ -30,38 +19,33 @@ function NewsCard(props) {
   const img =
     props.image ||
     "https://images.pexels.com/photos/3944454/pexels-photo-3944454.jpeg?auto=compress&cs=tinysrgb&w=600";
-  return (
-    <Card className="mt-6 w-96 hover:bg-[#67e8f9] shadow-xl my-2 hover:scale-90 duration-500 drop-shadow-2xl p-8">
-      <CardHeader color="blue-gray" className="relative h-56">
-        <img
-          src={img}
-          alt=""
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-            {titl + "."}
-        </Typography>
-        <Typography>
-          {src}
-          {pub_at}
-          {desc}
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <Button>
-            <a
-                href={props.url}
-                target="_blank"
-                rel="noreferrer"
-                className="text-white no-underline cursor-pointer my-2 p-2 rounded-md"
-                >
-                Know More!
-            </a>
-        </Button>
-      </CardFooter>
-    </Card>
 
+  return (
+    <div className="card card-side bg-base-100 shadow-xl">
+  <figure>
+    <img
+      src={img}
+      alt="" 
+      className="h-[200px] w-[200px] py-3 md:h-[300px] md:w-[300px]"/>
+  </figure>
+  <div className="card-body">
+    <h2 className="card-title"> {titl + "."}</h2>
+    <p><strong>Published:</strong> {pub_at}</p>
+    <p>{desc}</p>
+    <p><strong>Source:</strong> {src}</p>
+    <div className="card-actions justify-end">
+      <button className="btn btn-primary">
+        <a
+            href={props.url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-white no-underline cursor-pointer my-2 p-2 rounded-md"
+          >
+            Know More!
+          </a></button>
+    </div>
+  </div>
+</div>
   );
 }
 
