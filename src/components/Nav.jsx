@@ -64,7 +64,7 @@ export default function Example() {
 
     const handleToggle=(e)=>{
         if(e.target.checked){
-            setTheme("dark");
+            setTheme("black");
         }
         else{
             setTheme("light");
@@ -94,7 +94,7 @@ export default function Example() {
   };
   return (
     <div>
-      <Popover className="relative md:top-0 z-10 p-8 bg-[#6b21a8]">
+      <Popover className="relative m-6 md:top-0 z-10 p-8 bg-[#6b21a8]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 bg-[#facc15]"> 
           <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -199,7 +199,7 @@ export default function Example() {
                       <span>Location</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? "text-gray-600" : "text-gray-400",
+                          open ? "text-gray-900" : "text-gray-500",
                           "ml-2 h-5 w-5 group-hover:text-gray-500"
                         )}
                         aria-hidden="true"
@@ -220,13 +220,13 @@ export default function Example() {
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                             <span
                               onClick={() => handleClick({ location: "in" })}
-                              className="cursor-pointer p-3 rounded-md w-fit hover:text-purple-600 active:bg-purple-100"
+                              className="cursor-pointer p-3 rounded-md w-fit hover:text-purple-600 active:bg-purple-100 text-black"
                             >
                               India
                             </span>
                             <span
                               onClick={() => handleClick({ location: "oth" })}
-                              className="cursor-pointer  hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100"
+                              className="cursor-pointer  hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100 text-black"
                             >
                               World
                             </span>
@@ -271,13 +271,13 @@ export default function Example() {
                           <div className="relative grid gap-6 bg-white px-2 py-6 sm:gap-4 sm:p-4">
                             <span
                               onClick={() => handleClick({ lang: "hi" })}
-                              className="cursor-pointer hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100"
+                              className="cursor-pointer hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100 text-black"
                             >
                               Hindi
                             </span>
                             <span
                               onClick={() => handleClick({ lang:"en" })}
-                              className="cursor-pointer  hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100"
+                              className="cursor-pointer  hover:text-purple-600 p-3 rounded-md w-fit active:bg-purple-100 text-black"
                             >
                               English
                             </span>
